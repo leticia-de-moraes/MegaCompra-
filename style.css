@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --text-color: #fff;
+  --moon-starts : url(assets/moon-starts.svg);
+  --hover-color: rgba(255,255,255,0.2);
+  --fill-color: rgba(255, 255, 255, 0.1);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+}
+
+.light{
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --text-color: #000;
+  --moon-starts : url(assets/sun.svg);
+  --hover-color: rgba(0,0,0,0.1);
+  --fill-color: rgba(0, 0, 0, 0.05);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+}
+
+body{
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
+}
+
+body * {
+  font-family: "inter", sans-serif;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+#conteiner{
+  width: 100%;
+  max-width: 588px;
+  margin: 40px auto 0;
+  padding: 0 24px;
+}
+
+#profile{
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile #logotipo{
+  width: 110px;
+}
+
+#profile #logo{
+  width: 210px;
+  margin-top: 20px;
+}
+
+#switch{
+  width: 64px;
+  margin: 4px auto;
+  position: relative;
+}
+
+.light #switch button{
+  animation: slide-in 0.4s forwards;
+}
+
+#switch button{
+  width: 32px;
+  height: 32px;
+  background: #fff var(--moon-starts) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  animation: slide-back 0.4s;
+}
+
+#switch button:hover{
+  outline: 8px solid var(--hover-color);
+}
+
+#switch span{
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--fill-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a{
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--fill-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  padding: 10px 1px;
+}
+
+ul li a:hover{
+  background-color: var(--hover-color);
+}
+
+ul li a img{
+  width: 40px;
+  justify-content: center;
+}
+
+ul li #postura img{
+  width: 30px;
+}
+
+ul li #tapete img{
+  width: 26px;
+}
+
+#social{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#social a{
+  padding: 10px;
+  border-radius: 50%;
+}
+
+#social a:hover {
+  background: var(--hover-color);
+  padding: 10px;
+  transition: background 0.2s;
+}
+
+footer{
+  text-align: center;
+  font-size: 14px;
+  padding: 24px 0;
+}
+
+@keyframes slide-in{
+  from{
+    left: 0;
+  }
+  to{
+    left: 50%;
+  }
+}
+
+@keyframes slide-back{
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
+  }
+}
+
+@media (min-width: 700px){
+
+  :root{
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+  
+  .light{
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+
+}
